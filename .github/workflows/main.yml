@@ -24,7 +24,7 @@ jobs:
         working-directory: backend
 
       - name: ✅ Run tests
-        # run: npm run test
+        run: echo "Тесты пока отключены"
         working-directory: backend
 
       - name: 🔨 Build project
