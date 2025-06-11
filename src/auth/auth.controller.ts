@@ -17,7 +17,7 @@ export class AuthController {
     @UseGuards(AuthGuard('google'))
     async googleAuthRedirect(@Req() req, @Res() res: Response) {
         const result = await this.authService.googleLogin(req.user);
-        const redirectUrl = `http://localhost:5173/auth/google/redirect?token=${result.access_token}&email=${encodeURIComponent(result.user.email || '')}&avatar=${encodeURIComponent(result.user.avatar || '')}`;
+        const redirectUrl = `http://localhost:3001/auth/google/redirect?token=${result.access_token}&email=${encodeURIComponent(result.user.email || '')}&avatar=${encodeURIComponent(result.user.avatar || '')}`;
 
         return res.redirect(redirectUrl)
     }
